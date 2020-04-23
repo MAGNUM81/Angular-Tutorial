@@ -20,9 +20,8 @@ export class CoursesComponent
 {
     title = "List of courses";
     courses;
-    constructor()
+    constructor(service: CoursesService)
     {
-        let service = new CoursesService();
         this.courses = service.getCourses();
     }
 }
