@@ -10,6 +10,7 @@ import {CoursesService} from "./courses.service";
 import { TitleCaseComponent } from './title-case/title-case.component';
 import { CustomTitleCasePipe } from "./custom-titlecase.pipe";
 import {TitleCasePipe} from "@angular/common";
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {TitleCasePipe} from "@angular/common";
     CourseComponent,
     FavoriteComponent,
     TitleCaseComponent,
-    CustomTitleCasePipe
+    CustomTitleCasePipe,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
