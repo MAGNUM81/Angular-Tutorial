@@ -1,2 +1,2 @@
-<favorite [is-favorite]="course.isFavorite" (change)="onFavoriteChanged()"> </favorite>
+<favorite [is-favorite]="course.isFavorite" (change)="onFavoriteChanged($event)"> </favorite>
 {{course.name}} | Price : {{course.price.toString()}}
