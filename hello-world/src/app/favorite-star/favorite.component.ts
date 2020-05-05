@@ -7,8 +7,17 @@ import {Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
   styles:[
     `
 
+      .glyphicon {
+        color: green;
+      }
+
+      .glyphicon-star {
+        background: black;
+      }
     `
-  ]
+  ],
+// in the tutorial, the last style element overrides all others, but here it seems that the inline styles property is
+// overriding styleUrls property, but HTML style will override it.
 })
 export class FavoriteComponent {
     @Input('is-favorite') isFavorite : boolean;
