@@ -7,13 +7,15 @@ import { CourseComponent } from './course/course.component';
 import { FavoriteStarComponent } from './favorite-star/favorite-star.component';
 import {FormsModule} from "@angular/forms";
 import {CoursesService} from "./courses.service";
+import { TitleCaseComponent } from './title-case/title-case.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     CourseComponent,
-    FavoriteStarComponent
+    FavoriteStarComponent,
+    TitleCaseComponent
   ],
   imports: [
     BrowserModule,
