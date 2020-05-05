@@ -4,7 +4,7 @@ import {Component, OnInit} from '@angular/core';
     selector: 'courses',
     //#email : template variable
     template: `
-        <input [value]="email" (keyup.enter)="email = $event.target.value; onKeyUp()"/>
+        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()"/>
     `
 })
 //basic CSS knowledge about selector
