@@ -8,6 +8,8 @@ import { FavoriteStarComponent } from './favorite-star/favorite-star.component';
 import {FormsModule} from "@angular/forms";
 import {CoursesService} from "./courses.service";
 import { TitleCaseComponent } from './title-case/title-case.component';
+import { CustomTitleCasePipe } from "./custom-titlecase.pipe";
+import {TitleCasePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -15,13 +17,14 @@ import { TitleCaseComponent } from './title-case/title-case.component';
     CoursesComponent,
     CourseComponent,
     FavoriteStarComponent,
-    TitleCaseComponent
+    TitleCaseComponent,
+    CustomTitleCasePipe
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [CoursesService],
+  providers: [CoursesService, TitleCasePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
