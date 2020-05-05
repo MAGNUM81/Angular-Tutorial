@@ -24,7 +24,7 @@ import {TitleCasePipe} from "@angular/common";
     BrowserModule,
     FormsModule
   ],
-  providers: [CoursesService, TitleCasePipe],
+  providers: [CoursesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

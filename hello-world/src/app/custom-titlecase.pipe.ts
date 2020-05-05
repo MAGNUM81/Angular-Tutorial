@@ -7,36 +7,29 @@ import {TitleCasePipe} from "@angular/common";
 })
 export class CustomTitleCasePipe implements PipeTransform
 {
-  private prepositions = ["of", "the", "a", "or", "for"];
-  constructor(private titleCasePipe: TitleCasePipe)
+  private prepositions = ["of", "the"];
+  constructor()
   {
   }
-  transform(value: any, ...args): any
+  transform(value: string): any
   {
-    //1. apply vanilla titleCase
-    let vanilla = this.titleCasePipe.transform(value);
+      if (!value) return null;
+      //1. apply vanilla titleCase
 
-    let customized = "";
-    //2. split value
-    let words = vanilla?.split(" ");
-    //3. iterate
-    words?.forEach((w, index)=>{
-      let toAppend = w;
-      if (this.getSanitizedPrepositions().find((p) => w.toLowerCase() === p)) //3.1 if preposition : if not first word, minimize, else YASSS
-      {
-        if (!(index === 0)){
-          toAppend = w.toLowerCase();
+      let customized = "";
+      //2. split value
+      let words = value?.split(" ");
+      //3. iterate
+      for (var i = 0; i < words.length; i++){
+        if (i > 0 && this.prepositions.includes(words[i].toLowerCase())){
+          words[i] = words[i].toLowerCase();
+        }
+        else {
+          words[i] = words[i].substr(0, 1).toUpperCase() + words[i].substr(1).toLowerCase()
         }
       }
-      customized += " " + toAppend;
-    });
 
-    //4. return custom-piped string
-    return customized
-  }
-
-  getSanitizedPrepositions() : any[]
-  {
-      return this.prepositions.map((prep) => prep.toLocaleLowerCase())
+      //4. return custom-piped string
+      return words.join(" ")
   }
 }
