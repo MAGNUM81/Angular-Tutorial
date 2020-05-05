@@ -15,4 +15,8 @@ export class CourseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onFavoriteChanged()
+  {
+      console.log("Favorite changed")
+  }
 }
