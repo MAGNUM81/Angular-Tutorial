@@ -1,7 +1,7 @@
 <div>
   <span class="glyphicon"
         [class.glyphicon-heart]="true"
-        [style.color]="isActive ? 'deeppink' : '#ccc'"
+        [class.highlighted]="isActive"
         (click)="onHeartClick()">
 </span>
   {{likesCount}}

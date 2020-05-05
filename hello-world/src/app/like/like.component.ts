@@ -10,17 +10,10 @@ export class LikeComponent {
     @Input('likesCount') likesCount: number;
     @Output('change') change = new EventEmitter();
 
-    constructor()
-    {
-
-    }
-
     onHeartClick(){
+
+        this.likesCount += (this.isActive) ? -1 : 1;
         this.isActive = !this.isActive;
-        if(this.isActive)
-          this.likesCount++;
-        else
-          this.likesCount--;
         this.change.emit({
           newValue: this.isActive,
           newLikesCount: this.likesCount
