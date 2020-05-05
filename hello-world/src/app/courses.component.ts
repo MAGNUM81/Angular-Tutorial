@@ -4,7 +4,7 @@ import {Component, OnInit} from '@angular/core';
     selector: 'courses',
     //#email : template variable
     template: `
-        <input #email (keyup.enter)="onKeyUp(email.value)"/>
+        <input [value]="email" (keyup.enter)="onKeyUp()"/>
     `
 })
 //basic CSS knowledge about selector
@@ -13,8 +13,9 @@ import {Component, OnInit} from '@angular/core';
 //#courses -> <div id=courses/>
 export class CoursesComponent
 {
-    onKeyUp(email)
+    email = "me@example.com";
+    onKeyUp()
     {
-        console.log(email)
+        console.log(this.email)
     }
 }
