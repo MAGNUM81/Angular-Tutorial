@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./favorite.component.css']
 })
 export class FavoriteComponent implements OnInit {
-  @Input() isActive : boolean;
+  @Input() isFavorite : boolean;
   constructor() {
 
   }
@@ -16,7 +16,7 @@ export class FavoriteComponent implements OnInit {
 
   onClick()
   {
-    this.isActive = !this.isActive;
+    this.isFavorite = !this.isFavorite;
     console.log("Button was clicked")
   }
 }
