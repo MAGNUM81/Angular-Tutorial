@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './course/course.component';
-import { FavoriteStarComponent } from './favorite-star/favorite-star.component';
+import { FavoriteComponent } from './favorite-star/favorite.component';
 import {FormsModule} from "@angular/forms";
 import {CoursesService} from "./courses.service";
 import { TitleCaseComponent } from './title-case/title-case.component';
@@ -16,7 +16,7 @@ import {TitleCasePipe} from "@angular/common";
     AppComponent,
     CoursesComponent,
     CourseComponent,
-    FavoriteStarComponent,
+    FavoriteComponent,
     TitleCaseComponent,
     CustomTitleCasePipe
   ],

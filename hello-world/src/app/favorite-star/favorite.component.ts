@@ -1,11 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'favorite-star',
-  templateUrl: './favorite-star.component.html',
-  styleUrls: ['./favorite-star.component.css']
+  selector: 'favorite',
+  templateUrl: './favorite.component.html',
+  styleUrls: ['./favorite.component.css']
 })
-export class FavoriteStarComponent implements OnInit {
+export class FavoriteComponent implements OnInit {
   @Input() isActive : boolean;
   constructor() {
 
