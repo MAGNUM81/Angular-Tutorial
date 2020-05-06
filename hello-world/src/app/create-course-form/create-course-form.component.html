@@ -14,10 +14,10 @@
       class="alert alert-danger"
       *ngIf="firstName.touched && !firstName.valid">
       <div *ngIf="firstName.errors.required">
-        First name is required.
+        Name field is required.
       </div>
       <div *ngIf="firstName.errors.minlength">
-        First name should be minimum {{firstName.errors.minlength.requiredLength}} characters.
+        Name field should be at least {{firstName.errors.minlength.requiredLength}} characters.
       </div>
     </div>
   </div>

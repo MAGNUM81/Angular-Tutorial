@@ -19,8 +19,8 @@ export class ContactFormComponent {
     console.log(firstName)
   }
 
-  submit(f: NgForm)
+  submit(course)
   {
-    console.log(f)
+    console.log(course)
   }
 }
