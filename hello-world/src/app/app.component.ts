@@ -7,5 +7,5 @@ import {LikeChangedEventArgs} from "./like/like.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    courses = []
+    courses = [1, 2]
 }
