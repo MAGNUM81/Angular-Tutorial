@@ -1,10 +1,9 @@
 <h1>Angular</h1><br/>
-<div *ngIf="courses.length > 0; then coursesList else noCourses">
-
-</div>
-<ng-template #coursesList>
+<div [hidden]="courses.length > 0">
   List of courses
-</ng-template>
-<ng-template #noCourses>
+</div>
+<div [hidden]="courses.length == 0"> <!-- using hidden means the dom still contains it... bad for big apps -->
   No courses yet
-</ng-template>
+</div>
+
+<!-- if building the tree is costly, then use hidden instead of ngIf -->
