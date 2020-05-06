@@ -1,12 +1,14 @@
-<div>
-  <div class="panel panel-default"
-       (click)="onClick()">
+<div class="zippy">
+  <div
+      class="zippy-heading"
+      [class.expanded]="isExpanded"
+      (click)="toggle()">
     {{title}}
-    <i class="glyphicon pull-right"
-    [class.glyphicon-chevron-down]="!visible"
-    [class.glyphicon-chevron-up]="visible"></i>
+    <i class="glyphicon"
+    [class.glyphicon-chevron-down]="!isExpanded"
+    [class.glyphicon-chevron-up]="isExpanded"></i>
   </div>
-  <div *ngIf="visible" class="panel panel-collapse">
+  <div *ngIf="isExpanded" class="zippy-body">
     <ng-content></ng-content>
   </div>
 </div>

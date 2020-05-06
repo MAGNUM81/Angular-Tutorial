@@ -7,10 +7,10 @@ import {Component, Input} from '@angular/core';
 })
 export class ZippyComponent {
   @Input('title') title;
-  visible: boolean;
+  isExpanded: boolean;
 
-  onClick()
+  toggle()
   {
-    this.visible = !this.visible;
+    this.isExpanded = !this.isExpanded;
   }
 }
