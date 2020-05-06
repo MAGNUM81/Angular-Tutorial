@@ -1,0 +1,15 @@
+<div>
+  <div class="panel panel-default"
+       (click)="onClick()">
+    {{title}}
+    <i class="glyphicon pull-right"
+    [class.glyphicon-chevron-down]="!visible"
+    [class.glyphicon-chevron-up]="visible"></i>
+  </div>
+  <div *ngIf="visible" class="panel panel-collapse">
+    <ng-content></ng-content>
+  </div>
+</div>
+
+
+
