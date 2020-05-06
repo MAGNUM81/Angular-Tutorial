@@ -7,10 +7,8 @@ import {LikeChangedEventArgs} from "./like/like.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-   canSave:boolean;
-
-  onSaveClick()
-  {
-    this.canSave = !this.canSave;
+  task = {
+    title: 'Review applications',
+    assignee: null
   }
 }
