@@ -1,5 +1,7 @@
 <h1>Angular</h1><br/>
-<like
-[likesCount]="tweet.likesCount"
-[isActive]="tweet.isLiked"
-(change)="onLikeChanged($event)"></like>
+<div *ngIf="courses.length > 0">
+  List of courses
+</div>
+<div *ngIf="courses.length == 0">
+  No courses yet
+</div>
