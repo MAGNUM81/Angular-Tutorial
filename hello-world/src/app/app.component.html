@@ -1,9 +1,10 @@
 <h1>Angular</h1><br/>
-<div [hidden]="courses.length > 0">
-  List of courses
+<ul class="nav nav-pills">
+  <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'">Map View</a></li>
+  <li [class.active]="viewMode == 'list'"><a (click)="viewMode = 'list'">List View</a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'list'">List View Content</div>
+  <div *ngSwitchDefault>Otherwise</div>
 </div>
-<div [hidden]="courses.length == 0"> <!-- using hidden means the dom still contains it... bad for big apps -->
-  No courses yet
-</div>
-
-<!-- if building the tree is costly, then use hidden instead of ngIf -->
