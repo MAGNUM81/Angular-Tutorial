@@ -19,8 +19,8 @@ export class ContactFormComponent {
     console.log(firstName)
   }
 
-  submit(course)
+  submit(f)
   {
-    console.log(course)
+    console.log(f.value)
   }
 }

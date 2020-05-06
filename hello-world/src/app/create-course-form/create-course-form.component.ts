@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgForm } from "@angular/forms";
 
 @Component({
   selector: 'create-course-form',
@@ -13,8 +12,8 @@ export class CreateCourseFormComponent {
     {id:"3", name:"Languages"}
     ];
 
-  submit(f: NgForm)
+  submit(f)
   {
-      console.log("submitted : ", f)
+      console.log("submitted : ", f.form.value)
   }
 }
