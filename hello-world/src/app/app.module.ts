@@ -16,6 +16,7 @@ import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ElementTitleDirective } from './element-title.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { CreateCourseFormComponent } from './create-course-form/create-course-form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     InputFormatDirective,
     ZippyComponent,
     ElementTitleDirective,
-    ContactFormComponent
+    ContactFormComponent,
+    CreateCourseFormComponent
   ],
   imports: [
     BrowserModule,

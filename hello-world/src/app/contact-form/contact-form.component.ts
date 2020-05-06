@@ -8,9 +8,9 @@ import {NgModel, NgForm} from "@angular/forms";
 })
 export class ContactFormComponent {
   contactMethods = [
-    {id:1, name:"email"},
-    {id:2, name:"phone"},
-    {id:3, name:"pidgeon"}
+    {id:1, name:"Email"},
+    {id:2, name:"Phone"},
+    {id:3, name:"Pidgeon"}
   ];
   constructor() { }
 
