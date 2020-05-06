@@ -9,12 +9,8 @@ import {LikeChangedEventArgs} from "./like/like.component";
 export class AppComponent {
    courses;
 
-  onAdd()
+  loadCourses()
   {
-      this.courses.push({id: 4, name: "course4"})
-  }
-
-  loadCourses() {
     // this makes Angular reconstruct the whole tree list everytime we call loadCourses
       this.courses = [
           {id: 1, name: "course1"},
@@ -23,8 +19,9 @@ export class AppComponent {
       ];
   }
 
-  onChange(course)
+  trackCourse(index, course)
   {
-    course.name = "Updated"
+    //more efficient for heavy list items
+      return course ? course.id : undefined;
   }
 }
