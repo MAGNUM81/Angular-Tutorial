@@ -7,21 +7,10 @@ import {LikeChangedEventArgs} from "./like/like.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-   courses;
+   canSave:boolean;
 
-  loadCourses()
+  onSaveClick()
   {
-    // this makes Angular reconstruct the whole tree list everytime we call loadCourses
-      this.courses = [
-          {id: 1, name: "course1"},
-          {id: 2, name: "course2"},
-          {id: 3, name: "course3"}
-      ];
-  }
-
-  trackCourse(index, course)
-  {
-    //more efficient for heavy list items
-      return course ? course.id : undefined;
+    this.canSave = !this.canSave;
   }
 }
