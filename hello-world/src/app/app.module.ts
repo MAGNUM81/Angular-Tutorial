@@ -18,6 +18,7 @@ import { ElementTitleDirective } from './element-title.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { CreateCourseFormComponent } from './create-course-form/create-course-form.component';
 import {SignupFormComponent} from './signup-form/signup-form.component';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {SignupFormComponent} from './signup-form/signup-form.component';
     ZippyComponent,
     ElementTitleDirective,
     ContactFormComponent,
-    CreateCourseFormComponent
+    CreateCourseFormComponent,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule,
