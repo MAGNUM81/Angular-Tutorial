@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './course/course.component';
 import { FavoriteComponent } from './favorite-star/favorite.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CoursesService} from "./courses.service";
 import { TitleCaseComponent } from './title-case/title-case.component';
 import { CustomTitleCasePipe } from "./custom-titlecase.pipe";
@@ -38,7 +38,8 @@ import {SignupFormComponent} from './signup-form/signup-form.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]
