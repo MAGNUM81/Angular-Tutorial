@@ -1,4 +1,4 @@
-import {AbstractControl, ValidationErrors} from '@angular/forms';
+import {AbstractControl, AsyncValidatorFn, ValidationErrors} from '@angular/forms';
 
 export class UsernameValidators {
   static cannotContainSpace(control: AbstractControl) : ValidationErrors {
@@ -7,5 +7,16 @@ export class UsernameValidators {
     }
 
     return null
+  }
+
+  static shouldBeUnique(control: AbstractControl) : Promise<ValidationErrors> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'merk')
+          resolve({shouldBeUnique: true})
+        else
+          resolve(null)
+      }, 2000)
+    })
   }
 }
