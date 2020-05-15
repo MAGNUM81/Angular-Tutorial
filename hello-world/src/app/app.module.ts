@@ -9,7 +9,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CoursesService} from "./courses.service";
 import { TitleCaseComponent } from './title-case/title-case.component';
 import { CustomTitleCasePipe } from "./custom-titlecase.pipe";
-import {TitleCasePipe} from "@angular/common";
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { InputFormatDirective } from './input-format.directive';
@@ -20,6 +19,8 @@ import { CreateCourseFormComponent } from './create-course-form/create-course-fo
 import {SignupFormComponent} from './signup-form/signup-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component';
+import { PostsComponent } from './posts/posts.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,12 +39,14 @@ import { ChangePasswordFormComponent } from './change-password-form/change-passw
     ContactFormComponent,
     CreateCourseFormComponent,
     NewCourseFormComponent,
-    ChangePasswordFormComponent
+    ChangePasswordFormComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]
