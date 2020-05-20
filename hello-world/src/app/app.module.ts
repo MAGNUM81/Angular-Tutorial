@@ -5,22 +5,23 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './course/course.component';
 import { FavoriteComponent } from './favorite-star/favorite.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {CoursesService} from "./courses.service";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TitleCaseComponent } from './title-case/title-case.component';
-import { CustomTitleCasePipe } from "./custom-titlecase.pipe";
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
-import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
-import { ElementTitleDirective } from './element-title.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { CreateCourseFormComponent } from './create-course-form/create-course-form.component';
-import {SignupFormComponent} from './signup-form/signup-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component';
 import { PostsComponent } from './posts/posts.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { PostService } from './services/post.service';
+import {CustomTitleCasePipe} from './custom-titlecase.pipe';
+import {InputFormatDirective} from './input-format.directive';
+import {ElementTitleDirective} from './element-title.directive';
+import {CoursesService} from './courses.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,10 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [CoursesService],
+  providers: [
+    PostService,
+    CoursesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
