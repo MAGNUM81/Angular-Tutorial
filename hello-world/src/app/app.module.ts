@@ -22,6 +22,8 @@ import {CustomTitleCasePipe} from './custom-titlecase.pipe';
 import {InputFormatDirective} from './input-format.directive';
 import {ElementTitleDirective} from './element-title.directive';
 import {CoursesService} from './courses.service';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
+import {GithubFollowersService} from './github-followers.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import {CoursesService} from './courses.service';
     CreateCourseFormComponent,
     NewCourseFormComponent,
     ChangePasswordFormComponent,
-    PostsComponent
+    PostsComponent,
+    GithubFollowersComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import {CoursesService} from './courses.service';
   ],
   providers: [
     PostService,
+    GithubFollowersService,
     CoursesService,
     HttpClient
   ],
