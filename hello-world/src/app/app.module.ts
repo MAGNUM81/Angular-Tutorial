@@ -16,7 +16,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component';
 import { PostsComponent } from './posts/posts.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { PostService } from './services/post.service';
 import {CustomTitleCasePipe} from './custom-titlecase.pipe';
 import {InputFormatDirective} from './input-format.directive';
@@ -51,7 +51,8 @@ import {CoursesService} from './courses.service';
   ],
   providers: [
     PostService,
-    CoursesService
+    CoursesService,
+    HttpClient
   ],
   bootstrap: [AppComponent]
 })

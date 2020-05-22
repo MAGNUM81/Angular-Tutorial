@@ -8,42 +8,42 @@ import {PostService} from '../services/post.service';
 })
 export class PostsComponent implements OnInit{
 
-  posts: any[]
+  posts: any
 
 
   constructor(private postService : PostService) {
   }
 
   ngOnInit(): void {
-    this.postService.getPosts().subscribe(response => {
-      this.posts = response as any[]
-    },
+    this.postService.getAll().subscribe(response => {this.posts = response},
       (error: Response) => {
-        alert("An unexpected error occurred")
+        alert("An unexpected error occurred : " + error)
+        console.error(error)
       })
   }
 
   createPost(input: HTMLInputElement) {
     let post = {title: input.value};
+    this.posts.splice(0, 0, post)
     input.value = ''
-    this.postService.createPost(post)
+    this.postService.create(post)
       .subscribe(response => {
         post['id'] = response['id']
-        this.posts.splice(0, 0, post)
+
       },
         (error: Response) => {
-        if (error.status === 404){
-          // this.form.setErrors(error)
-        }
-        else{
-          alert("An unexpected error occurred")
-        }
+          if (error.status === 404){
 
+          }
+          else{
+            alert("An unexpected error occurred")
+          }
+          this.posts.splice(0, 1)
         });
   }
 
   updatePost(post: any) {
-    this.postService.updatePost(post, {isRead: true})
+    this.postService.update({isRead: true})
       .subscribe(
         response => {
           console.log(response)
@@ -54,11 +54,12 @@ export class PostsComponent implements OnInit{
   }
 
   deletePost(post: any) {
-    this.postService.deletePost(355)
+    let index = this.posts.indexOf(post)
+    this.posts.splice(index, 1)
+    this.postService.delete(post.id)
       .subscribe(response => {
-        let index = this.posts.indexOf(post)
-        this.posts.splice(index, 1)
-      },
+
+        },
         (error: Response) => {
           if (error.status === 404) {
             alert("This post has already been deleted.")
@@ -66,6 +67,7 @@ export class PostsComponent implements OnInit{
           else{
             alert("An unexpected error occurred")
           }
+          this.posts.splice(1, 0, post);
         });
   }
 }
