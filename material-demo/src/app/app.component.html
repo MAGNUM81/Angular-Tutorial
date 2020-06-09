@@ -1,4 +1,16 @@
-<mat-select [(ngModel)]="color" style="width: 100px;">
-  <mat-option *ngFor="let c of colors" [value]="c.id">{{c.color}}</mat-option>
-</mat-select>
+  <mat-form-field>
+    <input
+      ngModel
+      name="username"
+      #username="ngModel"
+      type="text"
+      matInput placeholder="Username"
+      required>
+    <mat-hint>Type a unique username</mat-hint>
+    <span matSuffix>@bleh.com</span>
+    <span matPrefix>admin.</span>
+    <mat-error *ngIf="username.invalid && username.errors.required">
+      The Username field is required
+    </mat-error>
+  </mat-form-field>
 
