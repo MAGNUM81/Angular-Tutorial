@@ -1,4 +1,4 @@
-<mat-radio-group value="1">
-  <mat-radio-button value="1">Female</mat-radio-button>
-  <mat-radio-button value="0">Male</mat-radio-button>
-</mat-radio-group>
+<mat-select [(ngModel)]="color" style="width: 100px;">
+  <mat-option *ngFor="let c of colors" [value]="c.id">{{c.color}}</mat-option>
+</mat-select>
+
