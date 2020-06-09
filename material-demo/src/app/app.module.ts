@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatRadioModule} from '@angular/material/radio';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatCheckboxModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
