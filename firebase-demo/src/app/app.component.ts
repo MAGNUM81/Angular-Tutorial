@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AngularFirestore} from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'firebase-demo';
+  courses: any[] = [];
+
+  constructor(db: AngularFirestore) {
+    db.collection('/courses').get().subscribe(data => {
+      console.log(data.docs);
+      this.courses.push(data);
+    });
+  }
 }
