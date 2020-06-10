@@ -3,7 +3,7 @@
  * 1 | @import "~@angular/material/theming";
  *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  *   '
- *   theme.scss 1:9  root stylesheet */
+ *   theme.sass 1:9  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
