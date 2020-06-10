@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Observable, timer} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +6,13 @@ import {Observable, timer} from 'rxjs';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  private courses: any;
-  isLoading = false;
+  progress = 0;
+  timer;
 
   constructor() {
-    this.isLoading = true;
-    this.getCourses()
-      .subscribe(courses => this.isLoading = false);
-  }
-
-  getCourses(): Observable<any> {
-    return timer(2000);
+    this.timer = setInterval(() => {
+      this.progress++;
+      if (this.progress === 100) { clearInterval(this.timer); }
+    }, 20);
   }
 }
