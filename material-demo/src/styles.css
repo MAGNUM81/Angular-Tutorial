@@ -1,0 +1,6 @@
+@import 'https://fonts.googleapis.com/icon?Material+Icons';
+@Import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+.mat-tab-body-content {
+  padding: 20px
+}
