@@ -1,7 +1,11 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-<button color="primary" mat-raised-button>Primary</button>
-<button color="accent" mat-raised-button>Accent</button>
-<button color="warn" mat-raised-button>Warn</button>
-<button mat-fab><mat-icon>check</mat-icon></button>
+<mat-chip-list>
+  <mat-chip
+    *ngFor="let cat of categories"
+    (click)="selectCategory(cat)"
+    [selected]="cat.selected"
+  >{{cat.name}}</mat-chip>
+
+</mat-chip-list>
 
