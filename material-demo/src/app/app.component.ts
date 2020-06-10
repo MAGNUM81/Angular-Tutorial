@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Observable, timer} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,17 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  categories = [
-    {name: 'Beginner', selected: false},
-    {name: 'Intermediate', selected: false},
-    {name: 'Expert', selected: false}
-  ];
+  private courses: any;
+  isLoading = false;
 
-  selectCategory(cat: any) {
-    this.categories
-      .filter(c => c !== cat)
-      .forEach(c => c.selected = false);
+  constructor() {
+    this.isLoading = true;
+    this.getCourses()
+      .subscribe(courses => this.isLoading = false);
+  }
 
-    cat.selected = !cat.selected;
+  getCourses(): Observable<any> {
+    return timer(2000);
   }
 }

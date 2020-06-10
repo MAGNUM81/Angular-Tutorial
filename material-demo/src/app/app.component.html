@@ -1,11 +1,5 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-<mat-chip-list>
-  <mat-chip
-    *ngFor="let cat of categories"
-    (click)="selectCategory(cat)"
-    [selected]="cat.selected"
-  >{{cat.name}}</mat-chip>
-
-</mat-chip-list>
+<mat-progress-spinner
+mode="indeterminate"
+*ngIf="isLoading"
+></mat-progress-spinner>
 
