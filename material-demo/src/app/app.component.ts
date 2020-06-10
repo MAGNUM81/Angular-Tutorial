@@ -4,8 +4,7 @@ import {EditCourseComponent} from './edit-course/edit-course.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
 

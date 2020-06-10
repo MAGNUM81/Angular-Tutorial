@@ -33,7 +33,8 @@ import {MatComponentsModule} from './mat-components.module';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatComponentsModule
+    MatComponentsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
