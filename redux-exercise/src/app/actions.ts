@@ -1,0 +1,6 @@
+export const actions = {
+  ADD_TODO: 'ADD_TODO',
+  REMOVE_TODO: 'REMOVE_TODO',
+  REMOVE_ALL_TODOS: 'REMOVE_ALL_TODOS',
+  TOGGLE_TODO: 'TOGGLE_TODO'
+}
