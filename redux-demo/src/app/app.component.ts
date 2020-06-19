@@ -11,8 +11,6 @@ import {actions} from './actions';
 export class AppComponent {
   title = 'redux-demo';
   @select('counter') count;
-  @select(['messaging', 'newMessages']) newMessages;
-  @select((s: AppState)=>s.messaging.newMessages) newMessagesCount;
 
   constructor(private ngRedux: NgRedux<AppState>) {
 
