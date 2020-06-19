@@ -19,7 +19,7 @@ import {AppState, INITIAL_STATE, rootReducer} from './store';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(ngRedux: NgRedux<AppState>){
+  constructor(ngRedux: NgRedux<Readonly<AppState>>){
     ngRedux.configureStore(rootReducer, INITIAL_STATE);
   }
 }

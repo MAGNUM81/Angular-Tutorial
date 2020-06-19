@@ -10,7 +10,7 @@ import {actions} from './actions';
 })
 export class AppComponent {
   title = 'redux-demo';
-  @select('counter') count;
+  @select((s: AppState) => s.counter) count;
 
   constructor(private ngRedux: NgRedux<AppState>) {
 
