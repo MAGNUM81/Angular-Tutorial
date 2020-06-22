@@ -2,9 +2,8 @@ import {Time} from '@angular/common';
 import {actions} from './actions';
 
 export interface AppState {
-  lastUpdateTime: Time
+  lastUpdateTime: Date
   totalItems: number
-  todos: TodoItem[]
 }
 
 export interface TodoItem {
@@ -15,19 +14,14 @@ export interface TodoItem {
 export const INITIAL_STATE : AppState = {
   lastUpdateTime : null,
   totalItems: 0,
-  todos: []
 }
 
 export function rootReducer(state: Readonly<AppState>, action: Readonly<any>) {
   switch (action.type) {
-    case actions.ADD_TODO: return {...state, lastUpdateTime: new Date(), totalItems: state.totalItems + 1, todos: [...state.todos /*, <that new item we're tryna add?>*/]}
-      break;
-    case actions.REMOVE_TODO:
-      break;
-    case actions.TOGGLE_TODO:
-      break;
-    case actions.REMOVE_ALL_TODOS:
-      break;
+    case actions.ADD_TODO: return {...state, lastUpdateTime: new Date(), totalItems: state.totalItems + 1, }
+    case actions.REMOVE_TODO: return {...state, lastUpdateTime: new Date(), totalItems: state.totalItems - 1}
+    case actions.TOGGLE_TODO: return {...state, lastUpdateTime: new Date() }
+    case actions.REMOVE_ALL_TODOS: return {...state, lastUpdateTime: new Date(), totalItems: 0 }
   }
   return state;
 }
