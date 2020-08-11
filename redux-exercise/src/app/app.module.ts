@@ -8,6 +8,10 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import {TodoService} from './todo.service';
 import {NgRedux} from '@angular-redux/store';
 import {AppState, INITIAL_STATE, rootReducer} from './store';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,9 @@ import {AppState, INITIAL_STATE, rootReducer} from './store';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     TodoService
