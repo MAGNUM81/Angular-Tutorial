@@ -10,6 +10,8 @@ import {NgRedux} from '@angular-redux/store';
 import {AppState, INITIAL_STATE, rootReducer} from './store';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+
 
 
 
@@ -23,7 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     ButtonsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DropDownsModule
   ],
   providers: [
     TodoService
