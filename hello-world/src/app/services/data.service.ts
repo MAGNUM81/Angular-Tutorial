@@ -24,8 +24,10 @@ export class AppRootComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const r: any = this.dataService.get('http://api.example.com/Examples');
-    console.log(r.hello);
+    this.dataService.get('http://api.example.com/Examples').subscribe(result => {
+      console.log(result.hello);
+    });
+
     console.log('AppRootComponent initialized');
   }
 }
